@@ -12,8 +12,7 @@ class Presenter {
 
     private ViewInterface view;
     private ModelInterface model;
-    private String dataP;
-    private SharedPreferences store;
+
 
     public Presenter(ViewInterface View) {
         this.model=new Model(View.getContext());
