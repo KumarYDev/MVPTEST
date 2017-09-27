@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
     public Context getContext() {
         setContext(main);
 
-        return main;
+        return MainActivity.this;
     }
 
     @Override

@@ -10,8 +10,7 @@ import android.content.SharedPreferences;
 public interface ModelInterface {
     void receiveEdit(String data);
     String sendText();
-    void getView( Context view);
-    void getShared(SharedPreferences share);
+
     Boolean getStatus();
     void setStatus(Boolean test);
     Boolean clearShared();

@@ -15,15 +15,13 @@ class Presenter {
     private String dataP;
     private SharedPreferences store;
 
-    public Presenter(MainActivity View) {
-//        setView(view);
-        this.model=new Model();
+    public Presenter(ViewInterface View) {
+        this.model=new Model(View.getContext());
         this.view= View;
-        store=View.getSharedPreferences("Data",Context.MODE_PRIVATE);
+
     }
 
     public void setClear(Boolean clear){
-        model.getShared(store);
        if(clear) {
            model.clearShared();
            if(model.clearShared())
@@ -33,10 +31,7 @@ class Presenter {
     }
 
     public void setData(String data) {
-        this.dataP=data;
-        model.getShared(store);
         model.receiveEdit(data);
-        model.getView(view.getContext());
         if(model.getStatus()){
             view.onSuccess();
         }else
@@ -45,7 +40,6 @@ class Presenter {
 
 
     public String getData() {
-        model.getShared(store);
         return model.sendText();
 
     }

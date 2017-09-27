@@ -18,6 +18,11 @@ public class Model implements ModelInterface {
     Boolean status=false;
     Boolean clear=false;
 
+    public Model(Context view) {
+        store=view.getSharedPreferences("Data",Context.MODE_PRIVATE);
+
+    }
+
     @Override
     public void receiveEdit(String info) {
 
@@ -35,16 +40,6 @@ public class Model implements ModelInterface {
     @Override
     public String sendText() {
         return store.getString("data","");
-    }
-
-    @Override
-    public void getView(Context view) {
-this.viewInterface=view;
-    }
-
-    @Override
-    public void getShared(SharedPreferences share) {
-        this.store=share;
     }
 
     @Override
