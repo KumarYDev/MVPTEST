@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.usermindarchive.h.mvptest.MainActivity">
+
+    <EditText
+        android:id="@+id/data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter here"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="38dp"
+        android:onClick="save"
+        android:text="Save"
+        android:layout_above="@+id/scrollView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="38dp" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/data"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/save"
+        android:layout_toRightOf="@+id/save"
+        android:onClick="show"
+        android:text="Show" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/show"
+        android:layout_marginTop="10dp"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+            </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollView2"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_toEndOf="@+id/show"
+        android:layout_toRightOf="@+id/show"
+        android:onClick="clear"
+        android:text="clear" />
+</RelativeLayout>
