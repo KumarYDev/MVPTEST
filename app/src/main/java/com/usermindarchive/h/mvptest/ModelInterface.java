@@ -13,6 +13,6 @@ public interface ModelInterface {
 
     Boolean getStatus();
     void setStatus(Boolean test);
-    Boolean clearShared();
+    Boolean clearData();
 
 }

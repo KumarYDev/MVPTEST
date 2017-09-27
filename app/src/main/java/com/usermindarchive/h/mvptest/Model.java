@@ -11,27 +11,28 @@ import static android.content.Context.MODE_PRIVATE;
  */
 
 public class Model implements ModelInterface {
-    Presenter presenter;
-    String data;
-    Context viewInterface;
+
     SharedPreferences store;
     Boolean status=false;
-    Boolean clear=false;
+    Data share;
 
     public Model(Context view) {
-        store=view.getSharedPreferences("Data",Context.MODE_PRIVATE);
+        share=new Data(view);
+//        store=view.getSharedPreferences("Data",Context.MODE_PRIVATE);
 
     }
 
     @Override
     public void receiveEdit(String info) {
 
-        if(store.contains("data")){
-            info=store.getString("data","")+"\n"+info;
-        }
-        SharedPreferences.Editor data=store.edit();
-        data.putString("data",info);
-        data.apply();
+//        if(store.contains("data")){
+//            info=store.getString("data","")+"\n"+info;
+//        }
+//        SharedPreferences.Editor data=store.edit();
+//        data.putString("data",info);
+//        data.apply();
+//
+        share.setData(info);
         setStatus(true);
 
 
@@ -39,7 +40,8 @@ public class Model implements ModelInterface {
 
     @Override
     public String sendText() {
-        return store.getString("data","");
+//        return store.getString("data","");
+        return share.getData();
     }
 
     @Override
@@ -55,14 +57,16 @@ this.status=test;
 
 
     @Override
-    public Boolean clearShared() {
-        if (store.contains("data")){
-            SharedPreferences.Editor data=store.edit();
-            data.clear();
-            data.apply();
-            return  true;
-        }else
-           return  false;
+    public Boolean clearData() {
+//        if (store.contains("data")){
+//            SharedPreferences.Editor data=store.edit();
+//            data.clear();
+//            data.apply();
+//            return  true;
+//        }else
+//           return  false;
+//        share.clearData();
+        return share.clearData();
     }
 
 

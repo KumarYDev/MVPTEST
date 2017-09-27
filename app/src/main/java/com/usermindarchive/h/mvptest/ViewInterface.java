@@ -8,7 +8,6 @@ import android.content.Context;
 
 public interface ViewInterface {
 Context getContext();
-    void setContext(MainActivity main);
     void onSuccess();
 
     void onFailure();

@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
             data.setError("Enter the Data");
         else
            presenter.setData(data.getText().toString());
+        data.setText(null);
     }
 
     @OnClick(R.id.clear)
@@ -76,14 +77,8 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
 
     @Override
     public Context getContext() {
-        setContext(main);
 
         return MainActivity.this;
-    }
-
-    @Override
-    public void setContext(MainActivity main) {
-main=MainActivity.this;
     }
 
     @Override

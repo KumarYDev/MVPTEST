@@ -22,8 +22,8 @@ class Presenter {
 
     public void setClear(Boolean clear){
        if(clear) {
-           model.clearShared();
-           if(model.clearShared())
+//           model.clearData();
+           if(model.clearData())
                view.DataCleared();
            else view.DataEmpty();
        }
