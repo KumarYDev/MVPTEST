@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
  * Created by HERO on 9/26/2017.
  */
 
-class Presenter {
+class Presenter implements PresenterInterface{
 
 
     private ViewInterface view;
@@ -20,6 +20,7 @@ class Presenter {
 
     }
 
+    @Override
     public void setClear(Boolean clear){
        if(clear) {
 //           model.clearData();
@@ -29,6 +30,7 @@ class Presenter {
        }
     }
 
+    @Override
     public void setData(String data) {
         model.receiveEdit(data);
         if(model.getStatus()){
@@ -37,7 +39,7 @@ class Presenter {
             view.onFailure();
     }
 
-
+    @Override
     public String getData() {
         return model.sendText();
 

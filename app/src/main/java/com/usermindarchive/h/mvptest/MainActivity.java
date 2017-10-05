@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements ViewInterface {
     @BindView(R.id.show) Button show;
     @BindView(R.id.clear) Button clear;
     @BindView(R.id.display)TextView display;
-    Presenter presenter;
+    PresenterInterface presenter;
     MainActivity main;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
